@@ -1,0 +1,42 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Pre-define variables minima uses that we want to change go here
+$dark-background-color: black;
+$dark-highlight-color: white;
+
+@import "minima";
+
+$dark-text-color: $grey-color-light;
+
+// Overwritten / new CSS goes here
+.site-header {
+    background-color: $dark-background-color;
+    color: $dark-text-color;
+    padding-bottom: 80px;
+    margin-bottom: 100px;
+}
+.site-header .page-link {
+    color: $dark-text-color;
+    font-family: monospace;
+}
+
+.site-nav {
+    background-color: $dark-background-color;
+    text-align: center;
+    float: none;
+    padding-top: 10px;
+}
+
+#sticker-logo {
+    position: absolute;
+    height: 200px;
+    left: calc(50% - 100px);
+    top: calc(100% - 100px);
+}
+
+#sticker-logo a:hover #backing {
+    stroke: $brand-color;
+    fill: $brand-color;
+}
