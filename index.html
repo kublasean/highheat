@@ -2,7 +2,22 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: default
 ---
-<h1>HIGH HEAT is a rock band</h1>
-<img src="/assets/img/out2.jpg">
+
+<div style="text-align: center;">
+    <h1><b>HIGH HEAT</b> is a rock band.</h1>
+    <h2>With us <b>it's about the music</b></h2>
+    <h2>Songwriting<br>Craftsmanship<br>Authenticity<br><b>Originality</b><br>These are our driving principles</h2>
+    <h2>They are why in an era where rock music can feel over-processed, played-out, and uninspired, <b>a HIGH HEAT show feels different<b></h2> 
+</div>
+<hr>
+<img src="/assets/img/reed_hero.jpg">
+<fieldset class="section-card">
+	<legend>See <b>HIGH HEAT</b> perform</legend>
+	{%- for show in site.data.shows -%}
+		<span class="post-meta">{{ show.date }} - {{ show.venue}}</span>
+		<p>{{show.description}}</p>
+	{%- endfor -%}
+	<a href="/shows">all shows</a>
+</fieldset>

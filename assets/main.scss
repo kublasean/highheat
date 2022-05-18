@@ -3,23 +3,59 @@
 ---
 
 // Pre-define variables minima uses that we want to change go here
-$dark-background-color: black;
-$dark-highlight-color: white;
+
+$brand-color: #c94c4c;
 
 @import "minima";
 
+// Overwritten / new CSS goes here
+$dark-background-color: black;
+$dark-highlight-color: white;
 $dark-text-color: $grey-color-light;
 
-// Overwritten / new CSS goes here
+body {
+    overscroll-behavior: none;
+}
+
+hr {
+	margin-top: $spacing-unit;
+	margin-bottom: $spacing-unit;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	border: none;
+	border-radius: 2px;
+	background-color: $grey-color-light;
+	height: 2px;
+}
+
 .site-header {
     background-color: $dark-background-color;
     color: $dark-text-color;
     padding-bottom: 80px;
     margin-bottom: 100px;
+    border-bottom: 2px solid $brand-color
 }
 .site-header .page-link {
     color: $dark-text-color;
     font-family: monospace;
+}
+.site-footer {
+    border-top: 2px solid $brand-color;
+    background-color: $dark-background-color;
+    color: $dark-text-color;
+}
+.site-footer .svg-icon {
+    fill: $dark-text-color;
+}
+.site-footer a {
+    color: $dark-highlight-color;
+}
+.footer-heading {
+	color: $dark-highlight-color;
+}
+.footer-col-wrapper {
+	color: $dark-text-color;
 }
 
 .site-nav {
@@ -27,6 +63,26 @@ $dark-text-color: $grey-color-light;
     text-align: center;
     float: none;
     padding-top: 10px;
+}
+
+.section-heading {
+	font-family: monospace;
+	background-color: $brand-color;
+	color: $dark-highlight-color;
+	padding: $spacing-unit / 2;
+}
+
+.section-card {
+	overflow: auto;
+	border-color: $brand-color;
+}
+.section-card a {
+	float: right;
+}
+.section-card legend {
+	background-color: $brand-color;
+	color: $dark-highlight-color;
+	padding: 3px 6px;
 }
 
 #sticker-logo {

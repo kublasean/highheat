@@ -36,6 +36,16 @@ header_pages:
   - photos/photos.html
   - videos/videos.html
   - about.html 
+  
+defaults:
+  - scope:
+      path: "photos/thumbs"
+	values:
+	  thumb: true
+  - scope:
+      path "photos/full_res"
+	values:
+	  full_res: true
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
