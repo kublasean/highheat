@@ -33,20 +33,19 @@ plugins:
 header_pages:
   - shows.html
   - music/music.html
-  - photos/photos.html
+  - photos.html
   - videos/videos.html
   - about.html 
   
 defaults:
   - scope:
       path: "photos/thumbs"
-	values:
-	  thumb: true
+    values:
+      thumb: true
   - scope:
-      path "photos/full_res"
-	values:
-	  full_res: true
-
+      path: "photos"
+    values:
+      image: true
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

@@ -13,6 +13,14 @@ $dark-background-color: black;
 $dark-highlight-color: white;
 $dark-text-color: $grey-color-light;
 
+$thumb-pad: 10px;
+
+@mixin desktop-only() {
+  @media only screen and (min-width: $on-laptop) {
+    @content;
+  }
+}
+
 body {
     overscroll-behavior: none;
 }
@@ -27,6 +35,10 @@ hr {
 	border-radius: 2px;
 	background-color: $grey-color-light;
 	height: 2px;
+}
+
+.pad {
+    height: $spacing-unit / 2;
 }
 
 .site-header {
@@ -95,4 +107,58 @@ hr {
 #sticker-logo a:hover #backing {
     stroke: $brand-color;
     fill: $brand-color;
+}
+
+.thumbnail-section {
+    margin-bottom: $spacing-unit / 2;
+    font-size: 0;
+    box-sizing: border-box;
+    padding: $thumb-pad;
+    border-radius: 5px;
+    background-color: $grey-color-light;
+}
+
+.thumbnail-section img {
+    box-sizing: border-box;
+    border: $thumb-pad solid transparent;
+    width: 50%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+        
+    @include desktop-only {
+        width: 33.3%;
+    }
+}
+
+.thumbnail-section img:hover {
+    border-color: $brand-color;
+}
+
+.credits {
+    color: $grey-color;
+    float: right;
+}
+
+.pop-up {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($brand-color, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.body-with-overlay {
+    overflow: hidden;
+}
+
+#gallery-photo {
+    border: none;
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: $spacing-unit / 2;
+    background: url(/assets/img/loading.gif) 50% no-repeat;
 }

@@ -1,0 +1,29 @@
+---
+layout: page
+title: "Photos"
+permalink: /photos/
+---
+<div class="pop-up" id="gallery" style="display: none;" onclick="close_gallery()">
+    <div style="margin: auto; width: 800px; height:100%; padding-top: 30px;" onclick="close_gallery()">
+        <img id="gallery-photo"/>
+    </div>
+</div>
+{% for shoot in site.data.photoshoots %}
+    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+    <span class="post-meta">{{ shoot.date | date: date_format }}</span>
+    <h3>{{ shoot.caption }}</h3>
+    {% for photographer in shoot.photos %}
+        {% assign image_files = site.static_files | where: "image", true %}
+        {% assign images_by_photographer = image_files | where_exp: "item", "item.path contains photographer.path" %}
+        <div class="thumbnail-section">
+            {% for photo in images_by_photographer %}
+                <img src="{{ photo.path }}"/>
+            {% endfor %}
+        </div>
+        {% if photographer.credits %}
+            <p class="credits post-meta">Photos by {{ photographer.credits }}</p><br>
+        {% endif %}
+        <hr>
+    {% endfor %}
+{% endfor %}
+<script src="/assets/scripts/photo_gallery.js"></script>
