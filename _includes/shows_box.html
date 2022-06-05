@@ -1,0 +1,16 @@
+<fieldset class="section-card">
+	<legend><b>{{ include.caption }}</b></legend>
+    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+    {% assign max_shows = 50 %}
+    {% if include.preview %}
+        {% assign max_shows = 1 %}
+    {% endif %}
+	{%- for show in site.data.shows limit: max_shows -%}
+		<span class="post-meta">{{ show.date | date: date_format }} - {{ show.venue}}</span>
+		<p>{{show.description}}</p>
+	{%- endfor -%}
+    
+    {% if include.preview %}
+	    <a href="/shows">more shows</a>
+    {% endif %}
+</fieldset>

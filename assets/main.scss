@@ -5,15 +5,12 @@
 // Pre-define variables minima uses that we want to change go here
 
 $brand-color: #c94c4c;
+$dark-color: #000000;
+$light-color: #ffffff;
 
 @import "minima";
 
-// Overwritten / new CSS goes here
-$dark-background-color: black;
-$dark-highlight-color: white;
-$dark-text-color: $grey-color-light;
-
-$thumb-pad: 10px;
+$thumb-pad: 5px;
 
 @mixin desktop-only() {
   @media only screen and (min-width: $on-laptop) {
@@ -23,85 +20,86 @@ $thumb-pad: 10px;
 
 body {
     overscroll-behavior: none;
+    color: $light-color;
+    background-color: $dark-color;
 }
 
-hr {
-	margin-top: $spacing-unit;
-	margin-bottom: $spacing-unit;
-	margin-left: auto;
-	margin-right: auto;
-	width: 60%;
-	border: none;
-	border-radius: 2px;
-	background-color: $grey-color-light;
-	height: 2px;
+h1, h2, blockquote {
+    font-family: 'Syncopate', Helvetica, Arial, sans-serif;
 }
 
-.pad {
-    height: $spacing-unit / 2;
+body, h3, p {
+    font-family: 'Nunito Sans', Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.site-header {
-    background-color: $dark-background-color;
-    color: $dark-text-color;
-    padding-bottom: 80px;
-    margin-bottom: 100px;
-    border-bottom: 2px solid $brand-color
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    
+    @include desktop-only() {
+        max-width: 80%;
+    }
 }
-.site-header .page-link {
-    color: $dark-text-color;
-    font-family: monospace;
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
 }
-.site-footer {
-    border-top: 2px solid $brand-color;
-    background-color: $dark-background-color;
-    color: $dark-text-color;
+
+h3 {
+    font-size: 12px;
+    font-weight: 900;
 }
-.site-footer .svg-icon {
-    fill: $dark-text-color;
+
+blockquote {
+    font-size: 48px;
+    font-weight: 400;
 }
-.site-footer a {
-    color: $dark-highlight-color;
+
+.highlight-section {
+    color: $light-color;
+    background-color: $brand-color;
 }
-.footer-heading {
-	color: $dark-highlight-color;
+.text-call-out {
+    color: $brand-color;
 }
-.footer-col-wrapper {
-	color: $dark-text-color;
+.highlight-section .text-call-out {
+    color: $dark-color;
+}
+
+header {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .site-nav {
-    background-color: $dark-background-color;
-    text-align: center;
-    float: none;
-    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin-left: auto;
+    margin-right: 5%;
+}
+.site-nav a {
+    color: $light-color;
 }
 
-.section-heading {
-	font-family: monospace;
-	background-color: $brand-color;
-	color: $dark-highlight-color;
-	padding: $spacing-unit / 2;
-}
-
-.section-card {
-	overflow: auto;
-	border-color: $brand-color;
-}
-.section-card a {
-	float: right;
-}
-.section-card legend {
-	background-color: $brand-color;
-	color: $dark-highlight-color;
-	padding: 3px 6px;
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    
+    @include desktop-only() {
+        width: 80%;
+    }
 }
 
 #sticker-logo {
     position: absolute;
-    height: 200px;
-    left: calc(50% - 100px);
-    top: calc(100% - 100px);
+    left: 10%;
+    top: calc(50% - 30px);
+    height: 60px;
 }
 
 #sticker-logo a:hover #backing {
@@ -110,12 +108,15 @@ hr {
 }
 
 .thumbnail-section {
-    margin-bottom: $spacing-unit / 2;
+    overflow: auto;
+    margin-bottom: $spacing-unit;
     font-size: 0;
     box-sizing: border-box;
     padding: $thumb-pad;
     border-radius: 5px;
     background-color: $grey-color-light;
+    
+    background: linear-gradient(346deg, rgba($grey-color-light,1) 0%, rgba($grey-color-light,0) 75%);
 }
 
 .thumbnail-section img {

@@ -19,11 +19,10 @@ permalink: /photos/
             {% for photo in images_by_photographer %}
                 <img src="{{ photo.path }}"/>
             {% endfor %}
+            {% if photographer.credits %}
+                <p class="credits post-meta">Photos by {{ photographer.credits }}</p><br>
+            {% endif %}
         </div>
-        {% if photographer.credits %}
-            <p class="credits post-meta">Photos by {{ photographer.credits }}</p><br>
-        {% endif %}
-        <hr>
     {% endfor %}
 {% endfor %}
 <script src="/assets/scripts/photo_gallery.js"></script>
