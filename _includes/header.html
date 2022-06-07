@@ -1,16 +1,39 @@
-<header role="banner" style="position: relative;">
-    {% include sticker_logo.html %}
+<header role="banner">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
 
-    {%- if page_paths -%}
-        <nav class="site-nav">
-            {%- for path in page_paths -%}
-                {%- assign my_page = site.pages | where: "path", path | first -%}
-                {%- if my_page.title -%}
-                    <div><h3><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape | upcase }}</a></h3></div>
-                {%- endif -%}
-            {%- endfor -%}
-        </nav>
-    {%- endif -%}
+    <div class="navbar-mobile">
+        <input type="checkbox" id="hamburger-checkbox">
+        <label class="burger" for="hamburger-checkbox">
+            <button>
+                <div class="container top">
+                    <div class="line top"></div>
+                </div>
+                <div class="container bottom">
+                    <div class="line bottom"></div>
+                </div>
+            </button>
+            <nav>
+                <ul>
+                    <a href="{{ /index.html | relative_url }}"><li>HOME</li></a>
+                    {% for path in page_paths %}
+                        {% assign my_page = site.pages | where: "path", path | first %}
+                        {% if my_page.title %}
+                            <a href="{{ my_page.url | relative_url }}"><li>{{ my_page.title | escape | upcase }}</li></a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </label>
+    </div>
+
+    <nav class="navbar-desktop">
+        {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+                <div><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape | upcase }}</a></div>
+            {%- endif -%}
+        {%- endfor -%}
+    </nav>
 </header>
+<script src="/assets/scripts/dropdown.js"></script>
