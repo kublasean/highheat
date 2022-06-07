@@ -29,7 +29,7 @@ h1, h2, blockquote {
     font-family: 'Syncopate', Helvetica, Arial, sans-serif;
 }
 
-body, h3, p {
+body, h3, p, button {
     font-family: 'Nunito Sans', Verdana, sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -313,6 +313,55 @@ body.dropdown-open {
     }
 }
 
+#venues-scroll {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: block;
+    margin-bottom: $spacing-unit * 2;
+}
+
+#venues-scroll div {
+    display: inline-block;
+    margin-right: 2.5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#venues-scroll div img {
+    height: 40vh;
+    width: 60vw;
+    object-fit: cover;
+    box-sizing: border-box;
+    border: 1px solid $light-color;
+    border-radius: 5px;
+    margin-bottom: $spacing-unit / 2;
+    
+    @include desktop-only() {
+        width: 20vw;
+    }
+}
+
+#charity-section {
+    width: 100%;
+    margin-top: $spacing-unit * 2;
+    
+    @include desktop-only() {
+        float: right;
+        width: 60%;
+        text-align: center;
+    }
+}
+#charity-section img {
+    width: 100%;
+}
+#charity-section p {
+    padding: 15px;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
 .thumbnail-section {
     overflow: auto;
     margin-bottom: $spacing-unit;
@@ -361,6 +410,20 @@ body.dropdown-open {
 .body-with-overlay {
     overflow: hidden;
 }
+
+.cta-button {
+    padding: 12px 20px;
+    font-weight: 900;
+    font-size: 16px;
+    background-color: $brand-color;
+    color: $light-color;
+    border: 1px solid $dark-color;
+    border-radius: 6px;
+}
+.cta-button:hover {
+    border-color: $light-color;
+    cursor: pointer;
+};
 
 #gallery-photo {
     border: none;
