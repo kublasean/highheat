@@ -57,11 +57,14 @@ h3 {
 blockquote {
     font-size: 48px;
     font-weight: 400;
+    color: $light-color;
 }
 
 .highlight-section {
     color: $light-color;
     background-color: $brand-color;
+    margin-top: $spacing-unit * 2;
+    margin-bottom: $spacing-unit * 2;
 }
 .text-call-out {
     color: $brand-color;
@@ -277,6 +280,38 @@ body.dropdown-open {
     stroke: $brand-color;
     fill: $brand-color;
 }*/
+
+#lakeside-col-a, #lakeside-col-b {
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit;
+}
+
+#lakeside-col-a p, #lakeside-col-b p {
+    padding: 5px;
+}
+
+#lakeside-col-a {
+    text-align: center;
+    
+    @include desktop-only() {
+        display: inline-block;
+        max-width: 40%;
+        vertical-align: middle;
+    }
+}
+
+#lakeside-col-b {
+    text-align: center;
+    
+    @include desktop-only() {
+        display: inline-block;
+        max-width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+        vertical-align: middle;
+        margin-left: auto;
+    }
+}
 
 .thumbnail-section {
     overflow: auto;
