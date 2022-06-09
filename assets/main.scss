@@ -78,9 +78,8 @@ header {
     margin-bottom: 60px;
     
     @include desktop-only() {
-        min-height: 40px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         margin-bottom: 0;
     }
 }
@@ -132,26 +131,76 @@ header {
     }
 }
 
-.navbar-desktop {
+.navbar-desktop-container {
     display: none;
-    vertical-align: middle;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
     
     @include desktop-only() {
-        display: flex;
-        justify-content: space-between;
-        width: 45%;
-        margin-left: auto;
-        margin-right: 5%;
+        display: block;
     }
 }
+.navbar-desktop-container h2 {
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    color: $light-color;
+}
+.navbar-desktop-container a {
+    color: darken($light-color, 15%);
+    font-size: 12px;
+    text-decoration: none;
+}
+.navbar-desktop-container a:hover {
+    color: $light-color;
+}
+
+.navbar-desktop-container nav {
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#navbar-logo-container {
+    display: inline-block;
+    width: 45%;
+    padding-left: 5%;
+    box-sizing: border-box;
+}
+#navbar-logo-container .sticker-logo {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    width: 70px;
+}
+#navbar-logo-container a:hover #backing {
+    stroke: $brand-color;
+    fill: $brand-color;
+}
+#navbar-logo-container a:hover h2 {
+    color: $brand-color;
+}
+
+.sticker-logo {
+    height: 100%;
+    position: absolute;
+}
+
+
+
 
 /* -------- Mobile dropdown ------------ */
 .navbar-mobile {
-    background-color: green;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
     
     @include desktop-only() {
         display: none;
@@ -296,15 +345,6 @@ body.dropdown-open {
 
 /* ----------- end mobile dropdown ------------ */
 
-.navbar-desktop a {
-    color: darken($light-color, 15%);
-    font-size: 12px;
-    text-decoration: none;
-}
-.navbar-desktop a:hover {
-    color: $light-color;
-}
-
 .content {
     margin-left: auto;
     margin-right: auto;
@@ -316,11 +356,8 @@ body.dropdown-open {
     }
 }
 
-#sticker-logo {
-    //display: none;
-    position: absolute;
+.sticker-logo {
     height: 100%;
-    left: 20%;
 }
 
 /*#sticker-logo #backing {

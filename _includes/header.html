@@ -1,4 +1,6 @@
 <header role="banner">
+
+    
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
 
@@ -15,7 +17,7 @@
             </button>
             <nav>
                 <ul>
-                    <a href="{{ /index.html | relative_url }}"><li>HOME</li></a>
+                    <a href="/"><li>HOME</li></a>
                     {% for path in page_paths %}
                         {% assign my_page = site.pages | where: "path", path | first %}
                         {% if my_page.title %}
@@ -27,13 +29,26 @@
         </label>
     </div>
 
-    <nav class="navbar-desktop">
-        {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-                <div><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape | upcase }}</a></div>
-            {%- endif -%}
-        {%- endfor -%}
-    </nav>
+    <div class="navbar-desktop-container">
+        <div id="navbar-logo-container">
+            {% if include.homepage == nil %}
+                <a href="/">
+            {% else %}
+                <a style="visibility: hidden">
+            {% endif %}
+                    {% include sticker_logo.html %}
+                    <h2>HIGH HEAT</h2>
+                </a>
+        </div><div style="display: inline-block; width: 55%; box-sizing: border-box; padding-right: 10%;">
+            <nav>
+                {%- for path in page_paths -%}
+                    {%- assign my_page = site.pages | where: "path", path | first -%}
+                    {%- if my_page.title -%}
+                        <div><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape | upcase }}</a></div>
+                    {%- endif -%}
+                {%- endfor -%}
+            </nav>
+        </div>
+    </div>
 </header>
 <script src="/assets/scripts/dropdown.js"></script>
