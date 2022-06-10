@@ -3,48 +3,80 @@ layout: page
 title: "Shows"
 permalink: /shows/
 ---
+<div id="future-shows" style="display: none;">
 <div style="display: inline-block; width: 55%; min-width: 350px; vertical-align: top; margin-bottom: 15px; box-sizing: border-box; padding-right: 15px;">
     <h3>Upcoming</h3>
     <ul id="upcoming-shows"></ul>
 </div><div style="display: inline-block; width: 45%; min-width: 300px; vertical-align: top; margin-bottom: 15px;">
-    <h3>Next show</h3>
+    <h3>Next</h3>
     <div class="calendar-tear-off">
         <h2 id="next-show-month">Saturday, May</h2>
         <h1 id="next-show-day">17</h1>
         <p id="next-show-desc">Clyde's Chattanooga with Behold the Brave</p>
     </div>
 </div>
+</div>
 
 <h3>Want us to play your next event?</h3>
 <p>We're always looking to bring our music to a new crowd at a fair price if our schedule is free. Send the details to <span class="text-call-out">highheatrocks@gmail.com</span></p>
 
-<h3>Past shows</h3>
-<ul id="past-shows"></ul>
-
+<h3>Past</h3>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Venue / Event</th>
+            <th scope="col">Location</th>
+        </tr>
+    </thead>
+    <tbody id="past-shows"></tbody>
+</table>
 <script>
     // show = { date, venue, desc }
     // returns HTML Node
-    function createShow(show, fullDetail = true) {
+    function createShow(show) {
         var li = document.createElement("li");
         let date = document.createElement("span");
-        let venue = document.createElement("span");
+        let city = document.createElement("span");
+        let venue = document.createElement("h3");
+        let desc = document.createElement("p");
         
-        date.innerText = show.date.toDateString();
-        venue.innerText = show.venue;
-        li.append(date, venue);
         
-        if (fullDetail) {
-            let desc = document.createElement("p");
-            desc.innerText = show.desc;
-            li.append(desc);
+        date.innerText = show.date.toDateString() + " | ";
+        city.innerText = show.location;
+        desc.innerText = show.desc;
+        
+        if (show.link != null) {
+            let link = document.createElement("a");
+            link.href = show.link;
+            link.innerText = show.venue;
+            venue.append(link);
+        } else {
+            venue.innerText = show.venue;
         }
         
+        li.append(date, city, venue, desc);        
         return li;
+    }
+    
+    function createPastShow(show) {
+        var tr = document.createElement("tr");
+        let date = document.createElement("td");
+        let venue = document.createElement("td");
+        let city = document.createElement("td");
+        
+        date.innerText = show.date.toLocaleDateString();
+        venue.innerText = show.venue;
+        city.innerText = show.location;
+        
+        tr.append(date, venue, city);
+        
+        return tr;
     }
     
 var shows = [
 	{%- for show in site.data.shows limit: 50 -%}
-        {date: new Date("{{ show.date }} 0:00:00"), venue: "{{ show.venue }}", desc: "{{ show.description }}"},
+        {date: new Date("{{ show.date }} 0:00:00"), venue: "{{ show.venue }}", desc: "{{ show.description }}", location: "{{ show.location }}", link: "{{ show.link }}"},
 	{%- endfor -%}
 ];
 console.log(shows);
@@ -70,11 +102,13 @@ if (upcoming.length != 0 ) {
     for (var i=0; i<upcoming.length; i++) {
         upcomingNode.append(createShow(upcoming[i]));
     }
+    
+    document.getElementById("future-shows").style.display = "initial";
 }
 
 // Create past shows
 var pastNode = document.getElementById("past-shows");
 for (var i=0; i<past.length; i++) {
-    pastNode.append(createShow(past[i], false));
+    pastNode.append(createPastShow(past[i], false));
 }
 </script>

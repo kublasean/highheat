@@ -1,8 +1,45 @@
-date,venue,description
+date,venue,description,location,link
 
-2022-08-13,Clyde's,"Local Chattanooga favorite bar for live music with Behold the Brave"
-2022-08-11,Fort Branner,"Lowkey outdoor show at an Knoxville's premier AirBnb for bands"
-2022-05-28,Preservation Pub,"Music at 9:00pm, doors at 8:00pm. Located on Market Square downtown Knoxville"
-2022-05-07,Barley's Knoxville,"First show at Barley's! Music at 10:00pm, opening for Sunkiller"
-2022-05-06,Wanderlinger Brewing Company,"High Heat returns to our favorite Chattanooga brewery"
-2022-02-26,VOLthon,"Fundraiser charity show at the University of Tennessee, Knoxville student union"
+2022-08-13,Hi-Fi Clyde's Chattanooga,"Local favorite bar for live music","Chattanooga, TN",https://www.hificlydeschattanooga.com/live-music
+2022-05-28,Preservation Pub,,"Knoxville, TN",
+2022-05-07,Barley's Taproom,,"Knoxville, TN",
+2022-05-06,Wanderlinger Brewing Company,,"Chattanooga, TN",
+2022-02-26,VOLthon,,"Knoxville, TN",
+2022-01-12,Preservation Pub,,"Knoxville, TN",
+2021-10-22,The 5 Spot,,"Nashville, TN",
+2021-08-20,Orange Hat Brewing Co.,,"Knoxville, TN",
+2021-08-05,Kimbro's Pickin' Parlor,,"Franklin, TN",
+2021-07-30,Capone's,,"Johnson City, TN",
+2021-07-24,Good Vibes on the River,,"Townsend, TN",
+2021-06-11,Ziggy's Music Box,,"Chattanooga, TN",
+2021-05-07,Good Vibes on the River,,"Townsend, TN",
+2020-09-05,Orange Hat Brewing Co.,,"Knoxville, TN",
+2020-07-11,Orange Hat Brewing Co.,,"Knoxville, TN",
+2020-03-12,Live Oak Music Row,,"Nashville, TN",
+2019-10-05,The Jungle,,"Knoxville, TN",
+2019-09-20,Wanderlinger Brewing Company,,"Chattanooga, TN",
+2019-08-24,Sunset on Central Festival,,"Knoxville, TN",
+2019-08-03,The Nick,,"Birmingham, AL",
+2019-06-29,Preservation Pub,,"Knoxville, TN",
+2018-11-03,The Outpost,,"Knoxville, TN",
+2018-09-20,Open Chord,,"Knoxville, TN",
+2018-05-25,Pilot Light,,"Knoxville, TN",
+2018-05-17,Preservation Pub,,"Knoxville, TN",
+2018-05-05,Grandma's Couch,,"Knoxville, TN",
+2018-04-28,The Roaming Gnome,,"Sevierville, TN",
+2018-04-12,Birdhouse,,"Knoxville, TN",
+2018-04-08,Rhythm & Blooms Festival,,"Knoxville, TN",
+2018-03-31,JJ's Bohemia,,"Chattanooga, TN",
+2018-03-30,Hops and Hollers Biergarten,,"Knoxville, TN",
+2018-03-24,Troubadour Roadhouse,,"Knoxville, TN",
+2018-03-18,Barley's Taproom,,"Knoxville, TN",
+2018-02-25,Grandma's Couch,,"Knoxville, TN",
+2018-02-20,Concourse at the International,,"Knoxville, TN",
+2017-11-16,Open Chord,,"Knoxville, TN",
+2017-11-02,Pilot Light,,"Knoxville, TN",
+2017-09-16,Fred Brown Ampitheater,,"Knoxville, TN",
+2017-04-28,Dogwood Arts Festival,,"Knoxville, TN",
+2017-03-24,The Modern Studio,,"Knoxville, TN",
+2016-11-19,The Purple Polilla,,"Knoxville, TN",
+2016-11-10,Elsweyr,,"Seymour, TN",
+2016-08-24,Open Chord,,"Knoxville, TN",

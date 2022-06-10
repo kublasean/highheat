@@ -538,14 +538,49 @@ body.dropdown-open {
     color: $light-color;
 }
 
+#upcoming-shows {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
 
-#upcoming-shows p {
-    margin-top: 5px;
+#upcoming-shows li {
+    margin-bottom: $spacing-unit;
 }
+#upcoming-shows a {
+    color: $light-color;
+    text-decoration: underline;
+    
+    @include desktop-only() {
+        text-decoration: none;
+    }
+}
+#upcoming-shows a:hover {
+    text-decoration: underline;
+}
+
 #upcoming-shows span {
-    margin-right: 25px;
-    font-weight: 900;
+    font-size: 14px;
+    color: $brand-color;
 }
-#past-shows span {
-    margin-right: 25px;
+#upcoming-shows h3 {
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+table th, table td {
+    border: none;
+}
+table {
+    border: 1px solid $light-color;
+}
+thead tr {
+    background-color: $light-color;
+    color: $dark-color;
+}
+tbody tr {
+    background-color: $dark-color !important;
+    color: $light-color;
 }
