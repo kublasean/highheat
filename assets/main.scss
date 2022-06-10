@@ -8,6 +8,8 @@ $brand-color: #c94c4c;
 $dark-color: #000000;
 $light-color: #ffffff;
 
+$lightish-color: darken($light-color, 15%);;
+
 @import "minima";
 
 $thumb-pad: 5px;
@@ -515,4 +517,35 @@ body.dropdown-open {
     min-height: 500px;
     margin-bottom: $spacing-unit / 2;
     background: url(/assets/img/loading.gif) 50% no-repeat;
+}
+
+.calendar-tear-off {
+    display: block;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    background-color: $light-color;
+    color: $dark-color;
+    border: 3px solid $brand-color;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.calendar-tear-off h1 {
+    max-width: 100%;
+}
+.calendar-tear-off h2 {
+    background-color: $brand-color;
+    color: $light-color;
+}
+
+
+#upcoming-shows p {
+    margin-top: 5px;
+}
+#upcoming-shows span {
+    margin-right: 25px;
+    font-weight: 900;
+}
+#past-shows span {
+    margin-right: 25px;
 }
