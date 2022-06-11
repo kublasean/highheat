@@ -20,6 +20,21 @@ $thumb-pad: 5px;
   }
 }
 
+a {
+    color: $light-color;
+    fill: $light-color;
+}
+
+a:visited {
+    color: $lightish-color;
+    fill: $lightish-color;
+}
+
+a:hover {
+    color: $brand-color;
+    fill: $brand-color;
+}
+
 body {
     overscroll-behavior: none;
     color: $light-color;
@@ -454,10 +469,7 @@ body.dropdown-open {
     font-size: 0;
     box-sizing: border-box;
     padding: $thumb-pad;
-    border-radius: 5px;
-    background-color: $grey-color-light;
-    
-    background: linear-gradient(346deg, rgba($grey-color-light,1) 0%, rgba($grey-color-light,0) 75%);
+    border-radius: 5px;    
 }
 
 .thumbnail-section img {
@@ -479,7 +491,6 @@ body.dropdown-open {
 }
 
 .credits {
-    color: $grey-color;
     float: right;
 }
 
@@ -584,3 +595,44 @@ tbody tr {
     background-color: $dark-color !important;
     color: $light-color;
 }
+
+.platforms-list svg {
+    width: 100%;
+}
+.platforms-list a {
+    text-decoration: none;
+}
+.platforms-list div {
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.platforms-list h2 {
+    font-size: 14px;
+}
+.release-preview {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid $light-color;
+    border-radius: 5px;
+    padding: $spacing-unit;
+    
+    @include desktop-only() {
+        width: 50%;
+    }
+}
+.release-preview svg {
+    width: 20%;
+}
+a:hover div.release-preview {
+    border-color: $brand-color;
+}
+a:hover div.release-preview svg {
+    width: 22%;
+}
+

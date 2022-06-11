@@ -1,6 +1,40 @@
 ---
-layout: "page"
 title: "Music"
 permalink: /music/
 ---
-<p>Music page</p>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="content">
+    <h1>Stream</h1>
+    {% include music_platforms.html 
+        spotify = "https://open.spotify.com/artist/40PTC167k3JNNITfZL72aW" 
+        apple_music = "https://music.apple.com/us/artist/high-heat/1304906415?app=music" 
+        youtube = "https://youtube.com/channel/UCwwlmsLi4eey5fR05-YFoug"
+        tidal = "https://listen.tidal.com/artist/9244554" 
+        amazon_music = "https://music.amazon.com/artists/B01NAG1DB8" 
+        pandora = "https://www.pandora.com/artist/high-heat/AR42r3PpgZ5f5K4" 
+        youtube_music = "https://music.youtube.com/browse/UCwwlmsLi4eey5fR05-YFoug" 
+        deezer = "https://www.deezer.com/artist/13533851" 
+        napster = "https://napster.com/high-heat"
+    %}
+    <h1>Buy</h1>
+    {% include music_platforms.html 
+        apple_music = "https://music.apple.com/us/artist/high-heat/1304906415?app=itunes" 
+        amazon_music = "https://amazon.com/dp/B01NAG1DB8"
+    %}
+    <hr style="visibility: hidden; height: 20vh;">
+    <a href="#">
+        <div class="release-preview">
+            {% include forward_arrow.html %}
+            <p style="margin-bottom: 0;">2020</p>
+            <h2>Mercury</h2>
+            <img src="/assets/img/hero_640.jpeg" style="width: 100%;">
+        </div>
+    </a>
+</div>
+<hr style="visibility: hidden; height: 20vh;">
+{% include footer.html %}
+</body>

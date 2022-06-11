@@ -9,8 +9,6 @@ permalink: /photos/
     </div>
 </div>
 {% for shoot in site.data.photoshoots %}
-    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-    <span class="post-meta">{{ shoot.date | date: date_format }}</span>
     <h3>{{ shoot.caption }}</h3>
     {% for photographer in shoot.photos %}
         {% assign image_files = site.static_files | where: "image", true %}
@@ -20,7 +18,7 @@ permalink: /photos/
                 <img src="{{ photo.path }}"/>
             {% endfor %}
             {% if photographer.credits %}
-                <p class="credits post-meta">Photos by {{ photographer.credits }}</p><br>
+                <p class="credits">Photos by {{ photographer.credits }}</p><br>
             {% endif %}
         </div>
     {% endfor %}

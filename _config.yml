@@ -34,7 +34,6 @@ header_pages:
   - shows.html
   - music/music.html
   - photos.html
-  - videos/videos.html
   - about.html 
   
 defaults:
