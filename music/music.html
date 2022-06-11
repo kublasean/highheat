@@ -26,14 +26,17 @@ permalink: /music/
         amazon_music = "https://amazon.com/dp/B01NAG1DB8"
     %}
     <hr style="visibility: hidden; height: 20vh;">
-    <a href="#">
-        <div class="release-preview">
+    {% for post in site.categories.music %}<div class="release-preview">
+        <a href="{{ post.url | relative_url }}">
             {% include forward_arrow.html %}
-            <p style="margin-bottom: 0;">2020</p>
-            <h2>Mercury</h2>
-            <img src="/assets/img/hero_640.jpeg" style="width: 100%;">
-        </div>
-    </a>
+            <div style="padding: 15px;">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <p style="margin-bottom: 0;">{{ post.date | date: date_format }}</p>
+                <h2>{{ post.title }}</h2>
+                <img src="{{ post.cover | relative_url }}" style="width: 100%;">
+            </div>
+        </a>
+    </div>{% endfor %}
 </div>
 <hr style="visibility: hidden; height: 20vh;">
 {% include footer.html %}

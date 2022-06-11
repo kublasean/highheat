@@ -1,0 +1,22 @@
+---
+layout: post
+---
+<img src="{{ page.cover | relative_url }}" style="width: 100%;">
+<p>Stream</p>
+{% include music_platforms.html 
+    spotify = page.spotify 
+    apple_music = page.apple_music 
+    youtube = page.youtube 
+    tidal = page.tidal 
+    amazon_music = page.amazon_music
+    youtube_music = page.youtube_music
+    deezer = page.deezer 
+    napster = page.napster
+%}
+<p>Purchase</p>
+{% include music_platforms.html 
+    amazon_music = page.amazon 
+    apple_music = page.itunes
+%}
+<hr style="height: 20vh; visibility: hidden">
+{{ content }}

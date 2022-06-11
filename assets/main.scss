@@ -20,6 +20,10 @@ $thumb-pad: 5px;
   }
 }
 
+img {
+    margin-bottom: $spacing-unit;
+}
+
 a {
     color: $light-color;
     fill: $light-color;
@@ -603,7 +607,8 @@ tbody tr {
     text-decoration: none;
 }
 .platforms-list div {
-    width: 150px;
+    width: calc(100% / 8);
+    min-width: 95px;
     text-align: center;
     display: inline-block;
     vertical-align: top;
@@ -611,16 +616,15 @@ tbody tr {
     padding: 15px;
 }
 .platforms-list h2 {
-    font-size: 14px;
+    font-size: 12px;
 }
 .release-preview {
     position: relative;
     width: 100%;
     display: inline-block;
-    box-sizing: border-box;
-    border: 1px solid $light-color;
-    border-radius: 5px;
-    padding: $spacing-unit;
+    padding: 0;
+    margin: 0;
+    margin-bottom: $spacing-unit;
     
     @include desktop-only() {
         width: 50%;
@@ -628,9 +632,6 @@ tbody tr {
 }
 .release-preview svg {
     width: 20%;
-}
-a:hover div.release-preview {
-    border-color: $brand-color;
 }
 a:hover div.release-preview svg {
     width: 22%;
