@@ -4,8 +4,15 @@ title: "Photos"
 permalink: /photos/
 ---
 <div class="pop-up" id="gallery" style="display: none;" onclick="close_gallery()">
-    <div style="margin: auto; width: 800px; height:100%; padding-top: 30px;" onclick="close_gallery()">
-        <img id="gallery-photo"/>
+    <div style="position: relative; height: 100%;">
+        <div style="margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);" onclick="close_gallery()">
+            <img id="gallery-photo"/>
+        </div>
     </div>
 </div>
 {% for shoot in site.data.photoshoots %}
@@ -13,13 +20,11 @@ permalink: /photos/
     {% for photographer in shoot.photos %}
         {% assign image_files = site.static_files | where: "image", true %}
         {% assign images_by_photographer = image_files | where_exp: "item", "item.path contains photographer.path" %}
+        {% if photographer.credits %}
+            <span class="post-meta">Photos by {{ photographer.credits }}</span>
+        {% endif %}
         <div class="thumbnail-section">
-            {% for photo in images_by_photographer %}
-                <img src="{{ photo.path }}"/>
-            {% endfor %}
-            {% if photographer.credits %}
-                <p class="credits">Photos by {{ photographer.credits }}</p><br>
-            {% endif %}
+            {% for photo in images_by_photographer %}<img src="{{ '/assets/img/thumbs/' | append: photo.name | relative_url }}" data-path="{{ photo.path | relative_url }}"/>{% endfor %}
         </div>
     {% endfor %}
 {% endfor %}

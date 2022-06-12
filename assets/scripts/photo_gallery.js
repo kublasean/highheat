@@ -22,9 +22,9 @@ function thumbnail_click(thumb_element) {
     newImage.onload = function() {
         placeholder.src = this.src;
     };
-    newImage.src = thumb_element.src;
+    newImage.src = thumb_element.dataset.path;
     
-    console.log(thumb_element.src);
+    console.log(thumb_element.dataset.path);
 }
 
 function close_gallery() {

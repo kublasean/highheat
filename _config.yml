@@ -20,15 +20,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   Straight up rock 'n' roll from Knoxville, TN
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: highheatrocks
-instagram_username: highheatrocks
-youtube_username: High Heat
-youtube_link: https://www.youtube.com/channel/UCLDWdTWhayVtz8v0w_aztEQ
+
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+
 
 header_pages:
   - shows.html
@@ -38,21 +37,19 @@ header_pages:
   
 defaults:
   - scope:
-      path: "photos/thumbs"
-    values:
-      thumb: true
-  - scope:
       path: "photos"
     values:
       image: true
+      
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - python/

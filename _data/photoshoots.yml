@@ -1,5 +1,5 @@
 - date: 2022-05-16
-  caption: Downtown Knoxville Photoshoot
+  caption: Downtown Knoxville
   photos:
     - credits: Todd Ethridge
       path: /photos/2022_downtown_shoot
@@ -27,6 +27,6 @@
 - date: 2018-11-03
   caption: The Outpost
   photos:
-    - credits: null
+    - credits: Darren Foster
       path: /photos/2018_outpost
   
