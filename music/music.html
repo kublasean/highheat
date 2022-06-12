@@ -31,7 +31,7 @@ permalink: /music/
             {% include forward_arrow.html %}
             <div style="padding: 15px;">
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                <p style="margin-bottom: 0;">{{ post.date | date: date_format }}</p>
+                <span class="post-meta">{{ post.date | date: date_format }}</span>
                 <h2>{{ post.title }}</h2>
                 <img src="{{ post.cover | relative_url }}" style="width: 100%;">
             </div>

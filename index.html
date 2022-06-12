@@ -8,7 +8,7 @@
 <body>
 {% include header.html homepage = true %}
 <div class="content" style="min-height: 60vh; display: flex; flex-direction: column;">
-    <h1>HIGH HEAT brings a new voice to rock 'n' roll music in Knoxville Tennessee. <span class="text-call-out">Are you ready to hear it?</span></h1>
+    <h1>HIGH HEAT brings a new voice to rock 'n' roll music in Knoxville Tennessee. <a href="{{ '/music' | relative_url }}"><span class="text-call-out">Are you ready to hear it?</span></a></h1>
     <div style="flex: 1; min-height: 200px; position: relative;">{% include sticker_logo.html %}</div>
 </div>
 
@@ -77,7 +77,7 @@
 </div>
 <div class="content">
     <h2 style="max-width: 70%">If you want to delight and surprise your audience with original music at your next event don't wait,</h2>
-    <button class="cta-button">BOOK HIGH HEAT.</button>
+    <form><button type="submit" formaction="{{ '/shows#booking' | relative_url }}" class="cta-button">BOOK HIGH HEAT.</button></form>
 </div>
 
 <hr style="margin-top: 30vh; visibility: hidden;">
@@ -93,7 +93,7 @@
     <div id="charity-section">
         <img src="/assets/img/hero_640.jpeg">
         <p>
-            High Heat at VOLthon 2022, a day-long dance marathon that raised over $170,000 for East Tennessee Children’s Hospital.
+            High Heat at VOLthon 2022, a day-long dance marathon that raised over $170,000 for East Tennessee Children’s Hospital. <a class="text-call-out" href="{{ '/about' | relative_url }}">More about us.</a>
         </p>
     </div>
 </div>
