@@ -18,8 +18,7 @@ author:
 email: highheatrocks@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Straight up rock 'n' roll from Knoxville, TN
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/highheat" # the subpath of your site, e.g. /blog
 
 # Build settings
 markdown: kramdown
