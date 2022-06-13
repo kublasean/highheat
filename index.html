@@ -12,12 +12,12 @@
     <div style="flex: 1; min-height: 200px; position: relative;">{% include sticker_logo.html %}</div>
 </div>
 
-<img srcset="/assets/img/hero_3840.jpeg 3840w, 
-             /assets/img/hero_2560.jpeg 2560w, 
-             /assets/img/hero_1920.jpeg 1920w, 
-             /assets/img/hero_1280.jpeg 1280w, 
-             /assets/img/hero_640.jpeg 640w"
-     src="/assets/img/hero_640.jpeg"
+<img srcset="{{ '/assets/img/hero_3840.jpeg' | relative_url }} 3840w, 
+             {{ '/assets/img/hero_2560.jpeg' | relative_url }} 2560w, 
+             {{ '/assets/img/hero_1920.jpeg' | relative_url }} 1920w, 
+             {{ '/assets/img/hero_1280.jpeg' | relative_url }} 1280w, 
+             {{ '/assets/img/hero_640.jpeg' | relative_url }} 640w"
+     src="{{ '/assets/img/hero_640.jpeg' | relative_url }}"
      alt="High Heat standing in an iconic Knoxville alley"
      style="width: 100%;">
 <div class="content" style="margin-top: -300px;">
