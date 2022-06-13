@@ -17,7 +17,7 @@
             </button>
             <nav>
                 <ul>
-                    <a href="/"><li>HOME</li></a>
+                    <a href="{{ '/' | relative_url }}"><li>HOME</li></a>
                     {% for path in page_paths %}
                         {% assign my_page = site.pages | where: "path", path | first %}
                         {% if my_page.title %}
@@ -32,7 +32,7 @@
     <div class="navbar-desktop-container">
         <div id="navbar-logo-container">
             {% if include.homepage == nil %}
-                <a href="/">
+                <a href="{{ '/' | relative_url }}">
             {% else %}
                 <a style="visibility: hidden">
             {% endif %}
@@ -51,4 +51,4 @@
         </div>
     </div>
 </header>
-<script src="/assets/scripts/dropdown.js"></script>
+<script src="{{ '/assets/scripts/dropdown.js' | relative_url }}"></script>
