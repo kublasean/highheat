@@ -12,14 +12,19 @@
     <div style="flex: 1; min-height: 200px; position: relative;">{% include sticker_logo.html %}</div>
 </div>
 
-<img srcset="{{ '/assets/img/hero_3840.jpeg' | relative_url }} 3840w, 
-             {{ '/assets/img/hero_2560.jpeg' | relative_url }} 2560w, 
-             {{ '/assets/img/hero_1920.jpeg' | relative_url }} 1920w, 
-             {{ '/assets/img/hero_1280.jpeg' | relative_url }} 1280w, 
-             {{ '/assets/img/hero_640.jpeg' | relative_url }} 640w"
-     src="{{ '/assets/img/hero_640.jpeg' | relative_url }}"
-     alt="High Heat standing in an iconic Knoxville alley"
-     style="width: 100%;">
+<picture>
+    <source media="(max-width: 800px)" srcset="{{ '/photos/2018_outpost/DSC_0287.jpg' | relative_url }}" style="width: 100%;">
+    <img srcset="{{ '/assets/img/hero_3840.jpeg' | relative_url }} 3840w, 
+                 {{ '/assets/img/hero_2560.jpeg' | relative_url }} 2560w, 
+                 {{ '/assets/img/hero_1920.jpeg' | relative_url }} 1920w, 
+                 {{ '/assets/img/hero_1280.jpeg' | relative_url }} 1280w, 
+                 {{ '/assets/img/hero_640.jpeg' | relative_url }} 640w"
+         src="{{ '/assets/img/hero_640.jpeg' | relative_url }}"
+         style="width: 100%;"
+         alt="High Heat standing in an iconic Knoxville alley">
+</picture>
+
+     
 <div class="content" style="margin-top: -300px;">
     <h1 style="max-width: 60%;">Since meeting at the University of Tennessee, we've been crafting our sound for the better part of a decade.</h1>
     <p style="max-width: 60%;">
@@ -52,7 +57,7 @@
 </div>
 
 <div class="highlight-section">
-    <div class="content" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="content" style="min-height: 80vh; box-sizing: border-box; display: flex; align-items: center; padding-top: 10vh; padding-bottom: 10vh;">
         <div>
             <blockquote>
                 “High Heat is a young band with a lot of potential
