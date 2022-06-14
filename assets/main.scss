@@ -99,6 +99,14 @@ blockquote {
     color: $lightish-color;
 }
 
+.biggish-section {
+    width: 100%;
+    
+    @include desktop-only() {
+        width: 60%;
+    }
+}
+
 header {
     position: relative;
     margin-bottom: 60px;
@@ -455,21 +463,15 @@ body.dropdown-open {
 #charity-section {
     width: 100%;
     margin-top: $spacing-unit * 2;
+    text-align: center;
     
     @include desktop-only() {
         float: right;
         width: 60%;
-        text-align: center;
     }
 }
 #charity-section img {
     width: 100%;
-}
-#charity-section p {
-    padding: 15px;
-    max-width: 500px;
-    box-sizing: border-box;
-    margin: auto;
 }
 
 .thumbnail-section {
