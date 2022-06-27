@@ -76,10 +76,10 @@ permalink: /shows/
     
 var shows = [
 	{%- for show in site.data.shows limit: 50 -%}
-        {date: new Date("{{ show.date }} 0:00:00"), venue: "{{ show.venue }}", desc: "{{ show.description }}", location: "{{ show.location }}", link: "{{ show.link }}"},
+        {date: new Date("{{ show.date }}T00:00:00"), venue: "{{ show.venue }}", desc: "{{ show.description }}", location: "{{ show.location }}", link: "{{ show.link }}"},
 	{%- endfor -%}
 ];
-console.log(shows);
+//console.log(shows);
 
 var today = new Date();
 var upcoming = shows.filter(show => today <= show.date);
@@ -87,7 +87,7 @@ var past = shows.filter(show => today > show.date);
 
 if (upcoming.length != 0 ) {
     var nextShow = upcoming[upcoming.length - 1];
-    console.log(nextShow);
+    //console.log(nextShow);
     
     // Set next show details
     const options = { month: 'long' };
